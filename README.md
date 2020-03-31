@@ -2,6 +2,8 @@
 
 An application to track the availability and demand of PPE (Personal Protective Equipment) to help people during the COVID-19 pandemic.
 
+Live project link: https://covid-19-ppe-tracker.appspot.com/
+
 # Dependencies
 * sqlite
 * redis
