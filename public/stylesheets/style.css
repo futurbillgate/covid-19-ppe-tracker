@@ -54,9 +54,16 @@ a {
   height:300px;
 }
 
-.fab-container{
+.fab-container-map {
   position: absolute;
   bottom: 25px;
+  right: 25px;
+  z-index: 500;
+}
+
+.fab-container{
+  position: absolute;
+  top: 25px;
   right: 25px;
   z-index: 500;
 }
