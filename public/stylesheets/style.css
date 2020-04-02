@@ -19,8 +19,46 @@ a {
   background-color: rgba(255,255,255,0.3);
 }
 
+.navbar-map {
+  background-color: rgba(255,255,255,0.3);
+}
+
+.navbar-map::after {
+  content: "";
+  background-image: url('/images/blur-gradient.jpg');
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
+.navbar .nav-link {
+    color: #fff;
+    
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar .navbar-brand {
+    color: #fff;
+}
+
 .choose-location{
   height:300px;
+}
+
+.fab-container-map {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  z-index: 500;
 }
 
 .fab-container{
@@ -53,4 +91,8 @@ a {
 
 .btn-fab span.material-icons{
   padding-top:5px;
+}
+
+.close-icon {
+  cursor: pointer;
 }
