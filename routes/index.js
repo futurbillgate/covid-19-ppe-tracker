@@ -31,7 +31,11 @@ router.get('/ppe/map', function (req, res, next) {
 router.get('/ppe/list', function (req, res, next) {
   models.Availability.findAll({ include: models.PPEType }).then(function (availabilities) {
     models.Requirement.findAll({ include: models.PPEType }).then(function (requirements) {
-      res.render('ppe-list', { availabilities: availabilities, requirements: requirements });
+      models.Manufacturing.findAll({ include: models.PPEType }).then(function (manufacturing) {
+        res.render('ppe-list', { availabilities: availabilities, requirements: requirements, manufacturing: manufacturing });
+      }).catch(function (err) {
+        console.log('Oops! something went wrong, : ', err);
+      });
     }).catch(function (err) {
       console.log('Oops! something went wrong, : ', err);
     });
