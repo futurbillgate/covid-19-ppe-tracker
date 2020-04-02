@@ -38,10 +38,12 @@
                             <form method="POST" action="/ppe">
                                 <input type="hidden" name="mode" value="availability">
                                 <div class="form-group">
-                                    <label for="itemType">Select type of PPE</label>
-                                    <select class="form-control" id="itemType" name="itemType">
-                                        <option value="mask">Mask</option>
-                                        <option value="glove">Glove</option>
+                                    <label for="PPETypeId">Select type of PPE</label>
+                                    <select class="form-control" id="PPETypeId" name="PPETypeId">
+                                        <% PPETypes.forEach(function(PPEType) { %>
+
+                                            <option value="<%- PPEType.id%>"><%- PPEType.name%></option>
+                                            <% }); %>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -81,10 +83,12 @@
                             <form method="POST" action="/ppe">
                                 <input type="hidden" name="mode" value="requirement">
                                 <div class="form-group">
-                                    <label for="itemType">Select type of PPE</label>
-                                    <select class="form-control" id="itemType" name="itemType">
-                                        <option value="mask">Mask</option>
-                                        <option value="glove">Glove</option>
+                                    <label for="PPETypeId">Select type of PPE</label>
+                                    <select class="form-control" id="PPETypeId" name="PPETypeId">
+                                        <% PPETypes.forEach(function(PPEType) { %>
+
+                                        <option value="<%- PPEType.id%>"><%- PPEType.name%></option>
+                                        <% }); %>
                                     </select>
                                 </div>
                                 <div class="form-group">

@@ -2,7 +2,6 @@
 module.exports = (sequelize, DataTypes) => {
   const Requirement = sequelize.define('Requirement', {
     name: DataTypes.STRING,
-    itemType: DataTypes.STRING,
     quantity: DataTypes.DOUBLE,
     email: DataTypes.STRING,
     contact: DataTypes.STRING,
@@ -11,6 +10,12 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Requirement.associate = function(models) {
     // associations can be defined here
+    Requirement.belongsTo(models.PPEType, {
+      onDelete: "SET NULL",
+      foreignKey: {
+        allowNull: true
+      }
+    });
   };
   return Requirement;
 };

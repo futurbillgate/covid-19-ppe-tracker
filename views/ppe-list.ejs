@@ -37,7 +37,7 @@
                             <h5 class="mb-0">
                                 <button class="btn btn-link" data-toggle="collapse" data-target="#collapse-av-<%= av.id %>"
                                     aria-expanded="true" aria-controls="collapse-av-<%= av.id %>">
-                                    <b><%= av.quantity %> <%= av.itemType %>s </b> available with <%= av.name %>
+                                    <b><%= av.quantity %> <%= av.PPEType.name %>s </b> available with <%= av.name %>
                                 </button>
                             </h5>
                         </div>
@@ -70,7 +70,7 @@
                                 <button class="btn btn-link" data-toggle="collapse"
                                     data-target="#collapse-req-<%= req.id %>" aria-expanded="true"
                                     aria-controls="collapse-req-<%= req.id %>">
-                                    <b><%= req.quantity %> <%= req.itemType %>s </b> required by <%= req.name %>
+                                    <b><%= req.quantity %> <%= req.PPEType.name %>s </b> required by <%= req.name %>
 
                                 </button>
                             </h5>
