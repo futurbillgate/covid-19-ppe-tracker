@@ -60,7 +60,14 @@
             iconSize: [38, 95], // size of the icon
             iconAnchor: [19, 47], // point of the icon which will correspond to marker's location
         });
+        var blueIcon = L.icon({
+            iconUrl: '/images/blue-marker.svg',
+
+            iconSize: [38, 95], // size of the icon
+            iconAnchor: [19, 47], // point of the icon which will correspond to marker's location
+        });
         const availability_url = "/availability";
+        const manufacturing_url = "/manufacturing";
         const requirement_url = "/requirement";
 
         $(function () {
@@ -71,6 +78,17 @@
                     const marker = L.marker([i.latitude, i.longitude], { icon: greenIcon }).addTo(mymap);
                     marker.bindPopup(`
                     <b>Available</b><br>
+                    ${i.quantity} ${i.PPEType.name}s<br>
+                    ${i.name}<br>
+                    `);
+                }
+            });
+            $.get(manufacturing_url, function (data) {
+                // console.log(data)
+                for (let i of data) {
+                    const marker = L.marker([i.latitude, i.longitude], { icon: blueIcon }).addTo(mymap);
+                    marker.bindPopup(`
+                    <b>Manufacturing</b><br>
                     ${i.quantity} ${i.PPEType.name}s<br>
                     ${i.name}<br>
                     `);

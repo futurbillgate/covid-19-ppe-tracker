@@ -21,7 +21,7 @@ client.on("connect", function (res) {
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.redirect('/ppe/map')
 });
 // View ppe on map
 router.get('/ppe/map', function (req, res, next) {
@@ -29,8 +29,8 @@ router.get('/ppe/map', function (req, res, next) {
 });
 // View ppe as list
 router.get('/ppe/list', function (req, res, next) {
-  models.Availability.findAll({include: models.PPEType}).then(function (availabilities) {
-    models.Requirement.findAll({include: models.PPEType}).then(function (requirements) {
+  models.Availability.findAll({ include: models.PPEType }).then(function (availabilities) {
+    models.Requirement.findAll({ include: models.PPEType }).then(function (requirements) {
       res.render('ppe-list', { availabilities: availabilities, requirements: requirements });
     }).catch(function (err) {
       console.log('Oops! something went wrong, : ', err);
@@ -43,9 +43,9 @@ router.get('/ppe/list', function (req, res, next) {
 // View ppe-create form
 router.get('/ppe/create', function (req, res, next) {
   models.PPEType.findAll()
-  .then(function(PPETypes){
-    res.render('ppe-create', {PPETypes: PPETypes});
-  })
+    .then(function (PPETypes) {
+      res.render('ppe-create', { PPETypes: PPETypes });
+    })
 });
 // Get list of availabilities
 router.get('/availability', function (req, res, next) {
@@ -63,7 +63,14 @@ router.get('/requirement', function (req, res, next) {
     console.log('Oops! something went wrong, : ', err);
   });
 });
-
+// Get list of manufacturings
+router.get('/manufacturing', function (req, res, next) {
+  models.Manufacturing.findAll({ attributes: ['name', 'quantity', 'latitude', 'longitude'], include: models.PPEType }).then(function (items) {
+    res.send(items);
+  }).catch(function (err) {
+    console.log('Oops! something went wrong, : ', err);
+  });
+});
 function findMatches(newPost, newPostType, mode) {
   let searchType;
   if (newPostType === 'Availability') {
@@ -123,6 +130,21 @@ router.post('/ppe', function (req, res, next) {
       res.render('ppe-thanks', { forId: created.id, forType: 'Requirement' });
     });
   }
+  else if (req.body.mode === 'manufacturing') {
+    models.Manufacturing.create({
+      name: req.body.name,
+      PPETypeId: req.body.PPETypeId,
+      quantity: req.body.quantity,
+      email: req.body.email,
+      contact: req.body.contact,
+      latitude: req.body.latitude,
+      longitude: req.body.longitude,
+    }).then(function (created) {
+      // findMatches(created, 'Manufacturing', 'onCreate');
+      res.redirect('ppe-map');
+    });
+  }
+
 
 })
 
