@@ -40,8 +40,10 @@
                                 <div class="form-group">
                                     <label for="itemType">Select type of PPE</label>
                                     <select class="form-control" id="itemType" name="itemType">
-                                        <option value="mask">Mask</option>
-                                        <option value="glove">Glove</option>
+                                        <% PPETypes.forEach(function(PPEType) { %>
+
+                                            <option value="<%- PPEType.id%>"><%- PPEType.name%></option>
+                                            <% }); %>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -83,8 +85,10 @@
                                 <div class="form-group">
                                     <label for="itemType">Select type of PPE</label>
                                     <select class="form-control" id="itemType" name="itemType">
-                                        <option value="mask">Mask</option>
-                                        <option value="glove">Glove</option>
+                                        <% PPETypes.forEach(function(PPEType) { %>
+
+                                        <option value="<%- PPEType.id%>"><%- PPEType.name%></option>
+                                        <% }); %>
                                     </select>
                                 </div>
                                 <div class="form-group">

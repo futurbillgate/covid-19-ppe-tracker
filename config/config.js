@@ -5,6 +5,8 @@ module.exports = {
     database: 'trackppe',
     host: 'localhost',
     dialect: 'postgres',
+    // Use a different storage. Default: none
+    seederStorage: 'json', // or 'sequelize' to store in database 
   },
   test: {
     dialect: "sqlite",

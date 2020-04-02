@@ -42,7 +42,10 @@ router.get('/ppe/list', function (req, res, next) {
 
 // View ppe-create form
 router.get('/ppe/create', function (req, res, next) {
-  res.render('ppe-create');
+  models.PPEType.findAll()
+  .then(function(PPETypes){
+    res.render('ppe-create', {PPETypes: PPETypes});
+  })
 });
 // Get list of availabilities
 router.get('/availability', function (req, res, next) {
@@ -95,7 +98,7 @@ router.post('/ppe', function (req, res, next) {
   if (req.body.mode === 'availability') {
     models.Availability.create({
       name: req.body.name,
-      itemType: req.body.itemType,
+      PPETypeId: req.body.PPETypeId,
       quantity: req.body.quantity,
       email: req.body.email,
       contact: req.body.contact,
@@ -109,7 +112,7 @@ router.post('/ppe', function (req, res, next) {
   else if (req.body.mode === 'requirement') {
     models.Requirement.create({
       name: req.body.name,
-      itemType: req.body.itemType,
+      PPETypeId: req.body.PPETypeId,
       quantity: req.body.quantity,
       email: req.body.email,
       contact: req.body.contact,
