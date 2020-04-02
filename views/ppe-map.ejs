@@ -71,7 +71,7 @@
                     const marker = L.marker([i.latitude, i.longitude], { icon: greenIcon }).addTo(mymap);
                     marker.bindPopup(`
                     <b>Available</b><br>
-                    ${i.quantity} ${i.itemType}s<br>
+                    ${i.quantity} ${i.PPEType.name}s<br>
                     ${i.name}<br>
                     `);
                 }
@@ -83,7 +83,7 @@
                     const marker = L.marker([i.latitude, i.longitude], { icon: redIcon }).addTo(mymap);
                     marker.bindPopup(`
                     <b>Required</b><br>
-                    ${i.quantity} ${i.itemType}s<br>
+                    ${i.quantity} ${i.PPEType.name}s<br>
                     ${i.name}<br>
                     `);
                 }

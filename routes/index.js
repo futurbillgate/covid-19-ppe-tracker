@@ -29,8 +29,8 @@ router.get('/ppe/map', function (req, res, next) {
 });
 // View ppe as list
 router.get('/ppe/list', function (req, res, next) {
-  models.Availability.findAll().then(function (availabilities) {
-    models.Requirement.findAll().then(function (requirements) {
+  models.Availability.findAll({include: models.PPEType}).then(function (availabilities) {
+    models.Requirement.findAll({include: models.PPEType}).then(function (requirements) {
       res.render('ppe-list', { availabilities: availabilities, requirements: requirements });
     }).catch(function (err) {
       console.log('Oops! something went wrong, : ', err);
@@ -49,7 +49,7 @@ router.get('/ppe/create', function (req, res, next) {
 });
 // Get list of availabilities
 router.get('/availability', function (req, res, next) {
-  models.Availability.findAll({ attributes: ['name', 'itemType', 'quantity', 'latitude', 'longitude'] }).then(function (items) {
+  models.Availability.findAll({ attributes: ['name', 'quantity', 'latitude', 'longitude'], include: models.PPEType }).then(function (items) {
     res.send(items);
   }).catch(function (err) {
     console.log('Oops! something went wrong, : ', err);
@@ -57,7 +57,7 @@ router.get('/availability', function (req, res, next) {
 });
 // Get list of requirements
 router.get('/requirement', function (req, res, next) {
-  models.Requirement.findAll({ attributes: ['name', 'itemType', 'quantity', 'latitude', 'longitude'] }).then(function (items) {
+  models.Requirement.findAll({ attributes: ['name', 'quantity', 'latitude', 'longitude'], include: models.PPEType }).then(function (items) {
     res.send(items);
   }).catch(function (err) {
     console.log('Oops! something went wrong, : ', err);
@@ -72,15 +72,15 @@ function findMatches(newPost, newPostType, mode) {
   else {
     searchType = 'Availability';
   }
-  client.geoadd(newPostType, newPost.longitude, newPost.latitude, newPost.id + '.' + newPost.itemType, function (err, res) {
+  client.geoadd(newPostType, newPost.longitude, newPost.latitude, newPost.id + '.' + newPost.PPETypeId, function (err, res) {
     // console.log(err,res);
     if (!err) {
       client.georadius(searchType, newPost.longitude, newPost.latitude, searchRadius, "km", 'WITHCOORD', function (err, res) {
         for (let match of res) {
 
           let matchId = match[0].toString().split('.')[0];
-          let itemType = match[0].toString().split('.')[1];
-          if (itemType === newPost.itemType) {
+          let PPETypeId = match[0].toString().split('.')[1];
+          if (PPETypeId === newPost.PPETypeId) {
             // mode can be onSubscribe or onCreate
             if (mode === 'onSubscribe') {
               sendMessage(newPost.id, newPostType, { lat: newPost.latitude, lng: newPost.longitude });

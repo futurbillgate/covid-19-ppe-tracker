@@ -38,8 +38,8 @@
                             <form method="POST" action="/ppe">
                                 <input type="hidden" name="mode" value="availability">
                                 <div class="form-group">
-                                    <label for="itemType">Select type of PPE</label>
-                                    <select class="form-control" id="itemType" name="itemType">
+                                    <label for="PPETypeId">Select type of PPE</label>
+                                    <select class="form-control" id="PPETypeId" name="PPETypeId">
                                         <% PPETypes.forEach(function(PPEType) { %>
 
                                             <option value="<%- PPEType.id%>"><%- PPEType.name%></option>
@@ -83,8 +83,8 @@
                             <form method="POST" action="/ppe">
                                 <input type="hidden" name="mode" value="requirement">
                                 <div class="form-group">
-                                    <label for="itemType">Select type of PPE</label>
-                                    <select class="form-control" id="itemType" name="itemType">
+                                    <label for="PPETypeId">Select type of PPE</label>
+                                    <select class="form-control" id="PPETypeId" name="PPETypeId">
                                         <% PPETypes.forEach(function(PPEType) { %>
 
                                         <option value="<%- PPEType.id%>"><%- PPEType.name%></option>
