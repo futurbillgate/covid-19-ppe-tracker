@@ -1,13 +1,12 @@
 {
   "name": "covid19-ppe-tracker",
-  "version": "0.0.1",
+  "version": "0.1.2",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "npm run migrate && npm run seed && node ./bin/www",
     "generateKeys": "node generate-vapid-keys.js",
     "migrate": "npx sequelize db:migrate",
-    "seed": "npx sequelize-cli db:seed:all",
-    "prestart": "npm run migrate && npm run seed"
+    "seed": "npx sequelize-cli db:seed:all"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
