@@ -30,6 +30,9 @@
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#requirement">Requirement</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#manufacturing">Manufacturing</a>
+                    </li>
                 </ul>
 
                 <div class="tab-content">
@@ -109,6 +112,51 @@
                                 </div>
                                 <input class="form-control" id="latitude" type="hidden" name="latitude" required>
                                 <input class="form-control" id="longitude" type="hidden" name="longitude" required>
+                                <!-- <div class="form-group">
+                                    <label for="latitude">Latitude</label>
+                                    <input class="form-control" id="latitude" type="text" name="latitude" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="longitude">Longitude</label>
+                                    <input class="form-control" id="longitude" type="text" name="longitude" required>
+                                </div> -->
+
+                                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div id="manufacturing" class="tab-pane fade">
+                        <div class="mt-5">
+                            <form method="POST" action="/ppe">
+                                <input type="hidden" name="mode" value="manufacturing">
+                                <div class="form-group">
+                                    <label for="PPETypeId">Select type of PPE</label>
+                                    <select class="form-control" id="PPETypeId" name="PPETypeId">
+                                        <% PPETypes.forEach(function(PPEType) { %>
+
+                                            <option value="<%- PPEType.id%>"><%- PPEType.name%></option>
+                                            <% }); %>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Your name</label>
+                                    <input class="form-control" id="name" type="text" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="quantity">Quantity</label>
+                                    <input class="form-control" id="quantity" type="number" name="quantity" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input class="form-control" id="email" type="text" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact">Contact</label>
+                                    <input class="form-control" id="contact" type="text" name="contact" required>
+                                </div>
+                                <input class="form-control" id="latitude" type="hidden" name="latitude" required>
+                                <input class="form-control" id="longitude" type="hidden" name="longitude" required>
+
                                 <!-- <div class="form-group">
                                     <label for="latitude">Latitude</label>
                                     <input class="form-control" id="latitude" type="text" name="latitude" required>

@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="card">
                     <div class="card-header bg-success">
                         <h5 class="mb-0 text-white">Availabilities</h5>
@@ -55,7 +55,7 @@
 
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="card">
                     <div class="card-header bg-danger">
                         <h5 class="mb-0 text-white">Requirements</h5>
@@ -82,6 +82,41 @@
                                 <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
                                     data-target="#locationModal" data-lat="<%= req.latitude %>"
                                     data-lng="<%= req.longitude %>">Location</button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <% }); %>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-primary">
+                        <h5 class="mb-0 text-white">Manufacturing</h5>
+                    </div>
+                </div>
+                <div id="accordion">
+                    <% manufacturing.forEach(function(man) { %>
+
+                    <div class="card">
+                        <div class="card-header" id="heading-man-<%= man.id %>">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" data-toggle="collapse"
+                                    data-target="#collapse-man-<%= man.id %>" aria-expanded="true"
+                                    aria-controls="collapse-man-<%= man.id %>">
+                                    <b><%= man.quantity %> <%= man.PPEType.name %>s </b> can be manufactured by <%= man.name %>
+
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="collapse-man-<%= man.id %>" class="collapse" aria-labelledby="heading-man-<%= man.id %>"
+                            data-parent="#accordion">
+                            <div class="card-body">
+                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
+                                    data-target="#locationModal" data-lat="<%= man.latitude %>"
+                                    data-lng="<%= man.longitude %>">Location</button>
 
                             </div>
                         </div>
