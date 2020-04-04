@@ -1,6 +1,6 @@
 {
   "name": "covid19-ppe-tracker",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "private": true,
   "scripts": {
     "start": "npm run migrate && npm run seed && node ./bin/www",
