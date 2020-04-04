@@ -55,6 +55,14 @@ router.get('/ppe/create', function (req, res, next) {
 router.get('/contact-us', function (req, res, next) {
   res.render('contact-us');
 });
+router.post('/suggestion', function(req, res, next){
+  models.Suggestion.create({
+    text: req.body.suggestion
+  })
+  .then(function(created){
+    res.render('contact-us', {alert: true});
+  })
+})
 // Get list of availabilities
 router.get('/availability', function (req, res, next) {
   models.Availability.findAll({ attributes: ['name', 'quantity', 'latitude', 'longitude'], include: models.PPEType }).then(function (items) {
