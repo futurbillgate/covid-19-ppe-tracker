@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head') %>
+
+<body class=" bg-gradient">
+    <%- include('partials/navbar') %>
+    <div class="container pt-2">
+        <div class="row w-100">
+            <div class="col-sm-12">
+                <div class="card shadow p-1 mb-2 bg-white rounded">
+                    <h5 class="card-title m-1 pt-2 pl-3">About Us</h5>
+                    <div class="card-body">
+                        <p class="card-text">COVID-19 PPE Tracker provides a common platform for tracking the
+                            requirement, availability and manufacturers information regarding PPE (Personal Protective
+                            Equipment). Our team tries to connects supply and demand after a thorough verification to
+                            supply the required PPE on time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row w-100">
+            <div class="col-sm-12">
+                <div class="card shadow p-1 mb-2 bg-white rounded">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h5 class="card-title m-1 pt-2 pl-3">Contact Us</h5>
+                            <div class="card-body h-75 vertical-partition">
+                                <p class="card-text">
+                                    <i class="fa fa-envelope"></i> &nbsp;
+                                    <a href="mailto:help@ppecovid.in">help@ppecovid.in</a>
+                                </p>
+                                <p class="card-text">
+                                    <i class="fa fa-envelope"></i> &nbsp;
+                                    <a href="mailto:ppecovidtracker@gmail.com">ppecovidtracker@gmail.com</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <h5 class="card-title m-1 pt-2 pl-3">Contribute</h5>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    To contribute as a developer, please check out:
+                                </p>
+                                <p class="card-text">
+                                    <i class="fa fa-github"></i> &nbsp;
+                                    <a target="_blank"
+                                        href="https://github.com/covid-19-ppe-tracker/covid-19-ppe-tracker">our GitHub
+                                        project</a>
+                                </p>
+                                <hr>
+                                <p class="card-text">
+                                    <i class="fa fa-slack"></i> &nbsp;
+                                    or join the channel <span class="text-success">#
+                                        project-gloves-masks-collection-drive</span>
+                                    on the <a target="_blank"
+                                        href="https://join.slack.com/t/coronathonin/shared_invite/zt-cym2v3s3-FmdaURFPqpjh4oGaWv6m3A">coronathon.in
+                                        slack group</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row w-100">
+            <div class="col-sm-12">
+                <div class="card shadow p-1 mb-2 bg-white rounded">
+                    <h5 class="card-title m-1 pt-2 pl-3">Suggestions</h5>
+                    <div class="card-body">
+                        <p class="card-text">We are still improving. Your suggestions would be invaluable in reaching
+                            our goal of providing life-saving PPE to those who need it</p>
+                        <form method="POST" action="/suggestions">
+                            <div class="form-group">
+                                <label for="suggestions">Enter your suggestions here</label>
+                                <textarea class="form-control" id="suggestions" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

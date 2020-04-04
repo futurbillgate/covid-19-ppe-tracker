@@ -51,6 +51,10 @@ router.get('/ppe/create', function (req, res, next) {
       res.render('ppe-create', { PPETypes: PPETypes });
     })
 });
+// View contact-us information
+router.get('/contact-us', function (req, res, next) {
+  res.render('contact-us');
+});
 // Get list of availabilities
 router.get('/availability', function (req, res, next) {
   models.Availability.findAll({ attributes: ['name', 'quantity', 'latitude', 'longitude'], include: models.PPEType }).then(function (items) {
