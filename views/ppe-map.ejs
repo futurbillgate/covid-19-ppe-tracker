@@ -4,27 +4,29 @@
 <%- include('partials/head') %>
 
 <body class=" bg-gradient">
-    <%- include('partials/navbar_map') %>
+    <%- include('partials/navbar') %>
     <div class="container-fluid p-0" style="height:100%">
         <div class="card shadow p-3 mb-5 bg-white rounded" 
             style="width: 18rem; position: absolute; right: 25px; top: 80px; z-index: 500;">
-            <span class="pull-right clickable close-icon" data-effect="fadeOut"><i class="material-icons">close</i></span>
+            <span class="pull-right clickable close-icon" data-effect="fadeOut"><i class="fa fa-times"></i></span>
             <div class="card-body">
                 <h5 class="card-title">PPE Tracker Help</h5>
-                <p class="card-text">The availability and requirement status of all PPEs are shown in a map here. <br> Click on the red + button to
-                register a new status or the grey list button to view this information in a list. <br>Clicking on a map marker
+                <p class="card-text">The availability and requirement status of all PPEs are shown in a map here. <br> Click on the red <span class="text-danger">+</span> button to
+                register a new status </p>
+                <hr>
+                <p class="card-text"> Clicking on a map marker
                 will show more information like quantity of items and contact.</p>
             </div>
         </div>
         <div id="mapid" class="h-100">
         </div>
-        <div class="fab-container-map">
-            <a type="button" class="btn btn-danger btn-fab" href="/ppe/create"><span class="text">+</span></a>
-            <a type="button" class="btn btn-fab btn-secondary btn-sm" href="/ppe/list" style>
-                <span class="material-icons">
-                    list
-                </span>
+        <div class="fab-container">
+            <a type="button" class="btn btn-danger btn-fab" href="/ppe/create">
+                <span class="fa fa-plus"></span>
             </a>
+            <!-- <a type="button" class="btn btn-fab btn-primary btn-sm" href="/ppe/list" style>
+                <span class="fa fa-list"></span>
+            </a> -->
         </div>
     </div>
 

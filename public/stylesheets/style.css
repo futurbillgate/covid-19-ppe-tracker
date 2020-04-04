@@ -1,5 +1,7 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
+  /* font-family: 'Open Sans', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
 }
 html, body {
   height: 100%;
@@ -10,44 +12,18 @@ a {
 }
 
 .bg-gradient{
-  background-image: url('/images/blur-gradient.jpg');
+  /* background-image: url('/images/ncov.png'); */
+  background-color: #eeeeee;
   background-size: cover;
   background-attachment: fixed;
 }
 
 .header.navbar{
-  background-color: rgba(255,255,255,0.3);
+  background-color:#0097a7;
 }
 
-.navbar-map {
-  background-color: rgba(255,255,255,0.3);
-}
-
-.navbar-map::after {
-  content: "";
-  background-image: url('/images/blur-gradient.jpg');
-  opacity: 0.7;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;   
-}
-
-.navbar .nav-link {
-    color: #fff;
-    
-}
-
-.navbar .nav-link:hover,
-.navbar .nav-link:focus {
-    color: #fff;
-    text-decoration: none;
-}
-
-.navbar .navbar-brand {
-    color: #fff;
+.header.navbar.navbar-dark .navbar-nav .nav-link{
+  color: #ffffff;
 }
 
 .choose-location{
@@ -63,14 +39,14 @@ a {
 
 .fab-container{
   position: absolute;
-  top: 25px;
+  bottom: 25px;
   right: 25px;
   z-index: 500;
 }
 .btn-fab{
   border-radius: 50%;
-  width:50px;
-  height:50px;
+  width:56px;
+  height:56px;
   box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
 }
 .btn-fab.btn-sm{
@@ -78,21 +54,27 @@ a {
   width:40px;
   height:40px;
 }
-.btn-fab.btn-sm span.material-icons{
-  position: relative;
-  /* top:-5px; */
-  /* left:-5px; */
-}
-.btn-fab span.text{
-  position: relative;
-  top:-10px;
-  font-size: 40px;
-}
 
-.btn-fab span.material-icons{
-  padding-top:5px;
+.btn-fab span{
+  position: relative;
+  /* top:10px; */
+  font-size: 30px;
+  vertical-align: middle;
+  top:50%;
+  margin-top: -25px;
+}
+.btn-fab.btn-sm span{
+  margin-top: -20px;
+  /* top:10px; */
+  font-size: 20px;
 }
 
 .close-icon {
   cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .vertical-partition {
+    border-right:1px solid #aaa;
+  }
 }
