@@ -1,5 +1,7 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
+  /* font-family: 'Open Sans', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
 }
 html, body {
   height: 100%;
@@ -10,45 +12,16 @@ a {
 }
 
 .bg-gradient{
-  background-image: url('/images/blur-gradient.jpg');
+  /* background-image: url('/images/ncov.png'); */
+  background-color: #eeeeee;
   background-size: cover;
   background-attachment: fixed;
 }
 
 .header.navbar{
-  background-color: rgba(255,255,255,0.3);
+  background-color:#0097a7;
 }
 
-.navbar-map {
-  background-color: rgba(255,255,255,0.3);
-}
-
-.navbar-map::after {
-  content: "";
-  background-image: url('/images/blur-gradient.jpg');
-  opacity: 0.7;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;   
-}
-
-.navbar .nav-link {
-    color: #fff;
-    
-}
-
-.navbar .nav-link:hover,
-.navbar .nav-link:focus {
-    color: #fff;
-    text-decoration: none;
-}
-
-.navbar .navbar-brand {
-    color: #fff;
-}
 
 .choose-location{
   height:300px;

@@ -14,12 +14,17 @@
             </span>
         </a>
     </div>
-    <div class="container pt-2 mt-5">
+    <div class="container pt-2">
         <div class="row w-100 justify-content-sm-center">
-            <div class="col-sm-10 text-center text-white">
-                <p>The availability and requirement status of all PPEs are shown in a list here. Click on the red + button to
-                    register a new status or the grey map button to view this information in a map. Click on each item
-                    to view more information like contact and location.</p>
+            <div class="col-sm-10 text-center ">
+                <div class="card shadow p-1 mb-2 bg-white rounded">
+                    <div class="card-body">
+                        <p class="card-text">The availability and requirement status of all PPEs are shown in a list here. Click on the red +
+                            button to
+                            register a new status or the grey map button to view this information in a map. Click on each item
+                            to view more information like contact and location.</p>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -35,8 +40,9 @@
                     <div class="card">
                         <div class="card-header" id="heading-av-<%= av.id %>">
                             <h5 class="mb-0">
-                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse-av-<%= av.id %>"
-                                    aria-expanded="true" aria-controls="collapse-av-<%= av.id %>">
+                                <button class="btn btn-link" data-toggle="collapse"
+                                    data-target="#collapse-av-<%= av.id %>" aria-expanded="true"
+                                    aria-controls="collapse-av-<%= av.id %>">
                                     <b><%= av.quantity %> <%= av.PPEType.name %>s </b> available with <%= av.name %>
                                 </button>
                             </h5>
@@ -76,8 +82,8 @@
                             </h5>
                         </div>
 
-                        <div id="collapse-req-<%= req.id %>" class="collapse" aria-labelledby="heading-req-<%= req.id %>"
-                            data-parent="#accordion">
+                        <div id="collapse-req-<%= req.id %>" class="collapse"
+                            aria-labelledby="heading-req-<%= req.id %>" data-parent="#accordion">
                             <div class="card-body">
                                 <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
                                     data-target="#locationModal" data-lat="<%= req.latitude %>"
@@ -105,14 +111,15 @@
                                 <button class="btn btn-link" data-toggle="collapse"
                                     data-target="#collapse-man-<%= man.id %>" aria-expanded="true"
                                     aria-controls="collapse-man-<%= man.id %>">
-                                    <b><%= man.quantity %> <%= man.PPEType.name %>s </b> can be manufactured by <%= man.name %>
+                                    <b><%= man.quantity %> <%= man.PPEType.name %>s </b> can be manufactured by
+                                    <%= man.name %>
 
                                 </button>
                             </h5>
                         </div>
 
-                        <div id="collapse-man-<%= man.id %>" class="collapse" aria-labelledby="heading-man-<%= man.id %>"
-                            data-parent="#accordion">
+                        <div id="collapse-man-<%= man.id %>" class="collapse"
+                            aria-labelledby="heading-man-<%= man.id %>" data-parent="#accordion">
                             <div class="card-body">
                                 <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
                                     data-target="#locationModal" data-lat="<%= man.latitude %>"
