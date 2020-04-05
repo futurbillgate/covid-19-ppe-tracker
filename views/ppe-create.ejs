@@ -91,12 +91,49 @@
                                         <span class="input-group-text">
                                             <i class="em em-calling" aria-role="presentation"></i>
                                         </span>
-					<span class="input-group-text">+91</span>					    
+					<span class="input-group-text">+91</span>
                                     </div>    
-                                    <input class="form-control" id="contact" type="tel" minlength="10" maxlength="10" pattern="\d+" name="contact" required>
+                                    <input class="form-control" id="contact" type="tel" name="contact" required minlength="10" maxlength="10" pattern="\d+">
                                 </div>
                             </div>
                         </fieldset>
+
+                        <fieldset>
+                            <legend>
+                                <span>Help us build trust!</span>
+                                <i class="em em-handshake" aria-role="presentation"></i>
+                            </legend>
+
+			    <div>
+				<p>We'd like to verify your request, please
+				    help us by uploading a document, like</p>
+				<ul>
+				    <li>relevant to the request from your organisation/institute</li>
+				    <li>photograph of items (or lack thereof)</li>
+				</ul>
+				<p>or a link to a relevant announcement or
+				    social media page, like</p>
+				<ul>
+				    <li>official website of your organisation/institute</li>
+				    <li>blog post, twitter, facebook, other social media</li>
+				</ul>
+				<p>that can legitimise your request.</p>
+			    </div>
+			    <div class="btn-group btn-group-toggle col pl-0 pr-0" data-toggle="buttons">
+			    	<label class="btn btn-outline-dark active">
+			    	    <input type="radio" name="kind" id="document" value="document" checked> Document
+			    	</label>
+			    	<label class="btn btn-outline-dark">
+			    	    <input type="radio" name="kind" id="hyperlink" value="hyperlink"> Hyperlink
+			    	</label>
+			    </div>
+                            <div class="form-group pt-4">
+                                <label id="proof_kind_label">Upload</label>
+			    	<input class="form-control-file" id="document_evidence" type="file" name="document" required>
+			    	<input class="form-control col" id="hyperlink_evidence" type="url" name="hyperlink" hidden>
+			    </div>
+			</fieldset>
+			
                         <input class="form-control" id="latitude" type="hidden" name="latitude" required>
                         <input class="form-control" id="longitude" type="hidden" name="longitude" required>
 

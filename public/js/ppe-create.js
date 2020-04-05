@@ -1,6 +1,6 @@
 /** Linking UI elements on ppe-create page*/
 
-$( "input[name=options]" ).on( "change", function() {
+$( "input[name=mode]" ).on( "change", function() {
 	const mode = $( this ).attr("id");
   switch (mode) {
   case "availability":
@@ -20,6 +20,22 @@ $( "input[name=options]" ).on( "change", function() {
     $("#ppe_info_set small").text("");
     $("#ppe_info_set i").removeClass().addClass("em em-factory");
     $("#name_emoji").removeClass().addClass("em em-female-factory-worker");
+    break;
+  }
+});
+
+$( "input[name=kind]" ).on( "change", function() {
+	const mode = $( this ).attr("id");
+  switch (mode) {
+  case "document":
+    $("#proof_kind_label").text("Upload");
+    $("#hyperlink_evidence").removeAttr("required").prop("hidden", true);;
+    $("#document_evidence").prop("required", true).prop("hidden", false);
+    break;
+  case "hyperlink":
+    $("#proof_kind_label").text("URL");
+    $("#document_evidence").removeAttr("required").prop("hidden", true);
+    $("#hyperlink_evidence").prop("required", true).prop("hidden", false);
     break;
   }
 });
