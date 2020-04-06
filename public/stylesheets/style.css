@@ -2,6 +2,7 @@ body {
   /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
   /* font-family: 'Open Sans', sans-serif; */
   font-family: 'Montserrat', sans-serif;
+  padding-top: 60px;
 }
 html, body {
   height: 100%;
@@ -19,7 +20,13 @@ a {
 }
 
 .header.navbar{
-  background-color:#0097a7;
+  background-color:#e57373;
+  /* padding:0rem 0.5rem; */
+  position: fixed;
+  top:0;
+  z-index: 500;
+  width: 100%;
+  font-size: 1rem;
 }
 
 .header.navbar.navbar-dark .navbar-nav .nav-link{
@@ -38,7 +45,7 @@ a {
 }
 
 .fab-container{
-  position: absolute;
+  position: fixed;
   bottom: 25px;
   right: 25px;
   z-index: 500;
@@ -77,4 +84,12 @@ a {
   .vertical-partition {
     border-right:1px solid #aaa;
   }
+}
+
+.logo{
+  background-color: #fff; 
+  border-radius: 50%; 
+}
+.navbar-toggler{
+  padding:0.25rem;
 }
