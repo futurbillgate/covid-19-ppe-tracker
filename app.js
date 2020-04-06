@@ -47,7 +47,8 @@ const router = AdminBroExpress.buildAuthenticatedRouter(adminBro, {
     authenticate: async (email, password) => {
         const user = await models.User.findOne({ 
             where: {
-                email
+                email,
+                role:'admin'
             }
          })
         if (user) {
